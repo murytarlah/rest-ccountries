@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.content{
+    @apply bg-gray-light dark:bg-darkblue-dark pb-20
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    @apply w-full bg-gray-lt-text p-6 shadow-lg dark:bg-darkblue-light scroll-m-2
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header div{
+    @apply font-bold text-gray-600 text-lg flex-nowrap flex justify-between w-[95%] mx-auto
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header div button{
+    @apply flex justify-between  items-center
 }
 
-.App-link {
-  color: #61dafb;
+.header div button span{
+    @apply truncate mx-3 dark:text-gray-light
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header h1{
+    @apply text-xl text-black dark:text-gray-light
+}
+
+.header button svg{
+    @apply text-base rotate-90
+}
+
+.countries{
+    @apply xl:w-[80%] w-[80%] lg:w-[90%] md:w-[90%] gap-20  mt-20  mx-auto grid grid-cols-1 xl:gap-x-20 xl:gap-y-24 lg:gap-x-6 lg:gap-y-14 sm:gap-10 md:gap-x-6 md:gap-y-12 justify-center md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4 
+}
+.country{
+    @apply w-auto xl:w-[300px] max-w-[300px] h-full bg-gray-lt-text mx-auto overflow-hidden rounded-md relative shadow-lg dark:bg-darkblue-light
+}
+
+.country .country-img{
+    @apply w-full min-w-full
+}
+
+.country .country-img img{
+    @apply w-full h-48 object-cover bg-gray-100 
+}
+
+.country-body{
+    @apply p-6 h-full
+}
+
+.country-title h1{
+    @apply my-5 text-gray-900 text-2xl font-medium dark:text-white
+}
+
+.country-body .country-info p{
+    @apply text-gray-500 text-sm py-1 dark:text-white
+}
+
+.country-body .country-info p span{
+    @apply font-bold
+}
+
+.dark{
+
 }
