@@ -4,7 +4,7 @@
 
 
 .content{
-    @apply bg-gray-light dark:bg-darkblue-dark pb-20
+    @apply bg-gray-light dark:bg-darkblue-dark pb-20 min-h-screen
 }
 
 .header {
@@ -62,6 +62,53 @@
     @apply font-bold
 }
 
-.dark{
+.country-details{
+    @apply w-[80%] mx-auto h-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-14 my-20
+}
 
+.country-details .home{
+    @apply col-span-2 p-3 shadow-md bg-gray-lt-text dark:bg-darkblue-light w-[150px] flex justify-evenly items-center text-black dark:text-gray-lt-text
+}
+
+.country-details .home span svg path{
+    @apply stroke-black dark:stroke-white
+}
+
+.country-details .country-flag{
+    @apply col-span-2 md:col-span-1
+}
+
+.country-details .country-flag img{
+    @apply w-min min-h-[320px] h-[320px]  max-h-[320px] bg-cover
+}
+
+.country-details > div{
+    @apply my-20
+}
+
+.country-details .country-info h1{
+    @apply text-2xl  font-bold text-darkblue-dark dark:text-gray-lt-text my-5
+}
+
+.country-details .country-info .infos{
+    @apply grid grid-cols-2 gap-10 text-darkblue-dark dark:text-gray-lt-text
+}
+
+.country-details .country-info .infos p{
+    @apply text-sm my-2
+}
+.country-details .country-info .infos p span{
+    @apply font-bold pr-2
+}
+
+.border-countries{
+    @apply mt-4 text-black dark:text-gray-lt-text
+}
+
+.borders{
+    @apply  h-full flex justify-start mt-2 flex-wrap
+}
+
+.borders a{
+    @apply px-3 py-1 shadow-md bg-gray-lt-text dark:bg-darkblue-light w-auto text-black dark:text-gray-lt-text mr-3
 }

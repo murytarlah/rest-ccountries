@@ -1,4 +1,4 @@
-const Header = ({onThemeChange, darkTheme}) => {
+const Navbar = ({onThemeChange, darkTheme}) => {
     return ( 
         <div className="header">
             <div>
@@ -25,4 +25,4 @@ const Header = ({onThemeChange, darkTheme}) => {
      );
 }
  
-export default Header;
+export default Navbar;

@@ -1,10 +1,14 @@
+import  { Link } from "react-router-dom";
 const Country = ({country}) => {
     return ( 
         <div className="country">
             <div className="country">
-                <div className="country-img">
-                    <img src={country.flag} alt={`Flag  of ${country.name}`} /> 
-                </div>
+                {console.log(country,country.alpha3Code)}
+                <Link to={`/${country.alpha3Code}`}> 
+                    <div className="country-img">
+                        <img src={country.flag} alt={`Flag  of ${country.name}`} /> 
+                    </div>
+                </Link>
                 <div className="country-body">    
                     <div className="country-title">
                         <h1>{country.name}</h1>
