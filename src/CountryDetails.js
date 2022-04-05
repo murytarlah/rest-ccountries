@@ -6,8 +6,8 @@ const CountryDetails = () => {
     const { name } = useParams()
     const [IsLoaded, setIsLoaded] = useState(false)
     const [country, setCountry] = useState(null)
+    const [borders, setBorders] = useState(null);
     // name = country.nativeName.toLowerCase()
-    console.log(name.toLowerCase())
 
     useEffect(() => {
         fetch('https://restcountries.com/v2/alpha/' + name.toLowerCase())
@@ -18,12 +18,25 @@ const CountryDetails = () => {
                 return res.json()
             })
             .then(data => {
+                console.log(data)
                 setCountry(data)
+                if (data.borders) {
+                    fetch('https://restcountries.com/v2/alpha?codes=' + data.borders.join(','))
+                    .then(res => {
+                        if (!res.ok) {
+                            throw Error('could not fetch countires data')
+                        }
+                        return res.json()
+                    })
+                    .then(data => {
+                        setBorders(data)
+                    })
+                }
                 setIsLoaded(true)
             }
             )
     }, [name]);
-
+    
     return (
         <div>
 
@@ -59,18 +72,20 @@ const CountryDetails = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="border-countries">
-                            <span>Border Countries</span>
-                            <div className="borders">
-                                {
-                                    country.borders.map((border,i) =>
-                                        <Link to={`/${border}`} key={i}>
-                                            <p> {border} </p>
+                        {
+                            borders &&
+                            <div className="border-countries">
+                                <span>Border Countries</span>
+                                <div className="borders">
+                                     { borders.map((border,i) =>
+                                        <Link to={`/${border.alpha3Code}`} key={i}>
+                                            {console.log(borders)}
+                                            <p> {border.name} </p>
                                         </Link>
-                                    )
-                                }
+                                    )}
+                                </div>
                             </div>
-                        </div>
+                        }
                     </div>
                 </div>
             }

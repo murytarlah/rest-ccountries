@@ -110,5 +110,5 @@
 }
 
 .borders a{
-    @apply px-3 py-1 shadow-md bg-gray-lt-text dark:bg-darkblue-light w-auto text-black dark:text-gray-lt-text mr-3
+    @apply px-3 py-1 shadow-md bg-gray-lt-text dark:bg-darkblue-light w-auto text-black dark:text-gray-lt-text mr-3 mb-3
 }
