@@ -3,7 +3,6 @@ const Country = ({country}) => {
     return ( 
         <div className="country">
             <div className="country">
-                {console.log(country,country.alpha3Code)}
                 <Link to={`/${country.alpha3Code}`}> 
                     <div className="country-img">
                         <img src={country.flag} alt={`Flag  of ${country.name}`} /> 

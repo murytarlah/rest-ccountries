@@ -18,7 +18,6 @@ const CountryDetails = () => {
                 return res.json()
             })
             .then(data => {
-                console.log(data)
                 setCountry(data)
                 if (data.borders) {
                     fetch('https://restcountries.com/v2/alpha?codes=' + data.borders.join(','))
@@ -79,7 +78,6 @@ const CountryDetails = () => {
                                 <div className="borders">
                                      { borders.map((border,i) =>
                                         <Link to={`/${border.alpha3Code}`} key={i}>
-                                            {console.log(borders)}
                                             <p> {border.name} </p>
                                         </Link>
                                     )}

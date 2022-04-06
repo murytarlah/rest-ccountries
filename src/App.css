@@ -32,7 +32,7 @@
 }
 
 .countries{
-    @apply xl:w-[80%] w-[80%] lg:w-[90%] md:w-[90%] gap-20  mt-20  mx-auto grid grid-cols-1 xl:gap-x-20 xl:gap-y-24 lg:gap-x-6 lg:gap-y-14 sm:gap-10 md:gap-x-6 md:gap-y-12 justify-center md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4 
+    @apply xl:w-[80%] w-[80%] lg:w-[90%] md:w-[90%] gap-20  mt-10  mx-auto grid grid-cols-1 xl:gap-x-20 xl:gap-y-24 lg:gap-x-6 lg:gap-y-14 sm:gap-10 md:gap-x-6 md:gap-y-12 justify-center md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4 
 }
 .country{
     @apply w-auto xl:w-[300px] max-w-[300px] h-full bg-gray-lt-text mx-auto overflow-hidden rounded-md relative shadow-lg dark:bg-darkblue-light
@@ -82,9 +82,9 @@
     @apply w-min min-h-[320px] h-[320px]  max-h-[320px] bg-cover
 }
 
-.country-details > div{
-    @apply my-20
-}
+/* .country-details > div{
+    @apply 
+} */
 
 .country-details .country-info h1{
     @apply text-2xl  font-bold text-darkblue-dark dark:text-gray-lt-text my-5
@@ -111,4 +111,39 @@
 
 .borders a{
     @apply px-3 py-1 shadow-md bg-gray-lt-text dark:bg-darkblue-light w-auto text-black dark:text-gray-lt-text mr-3 mb-3
+}
+
+.main-top {
+    @apply  justify-between w-[90%] mx-auto py-9 flex-wrap  md:flex
+}
+
+.main-top div{
+    @apply my-5
+}
+
+.country-searcher label{
+    @apply p-3 bg-gray-lt-text dark:bg-darkblue-light flex justify-evenly shadow-md rounded items-center
+}
+
+.country-searcher label svg {
+    @apply w-[15%] text-center 
+}
+.country-searcher label svg path{
+    @apply stroke-current dark:stroke-white
+}
+
+.country-searcher label input{
+    @apply p-2  bg-none dark:bg-darkblue-light focus:outline-none focus:bg-gray-light dark:focus:bg-darkblue-dark w-[90%] text-black dark:text-white
+}
+
+.country-filter{
+    @apply p-2 bg-white dark:bg-darkblue-light rounded shadow-md w-auto
+}
+
+.country-filter select{
+    @apply p-3 bg-white dark:bg-darkblue-light text-black dark:text-white w-[100%] focus-within:outline-none focus:outline-none
+}
+
+.country-filter select option{
+    @apply p-3 bg-white dark:bg-darkblue-light text-black dark:text-white 
 }
