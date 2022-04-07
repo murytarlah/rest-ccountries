@@ -1,12 +1,38 @@
 import CountriesList from './CountriesList'
 import CountryFilter from './CountryFilter';
 import { useState,useEffect } from 'react';
+import LoadingSkeleton from './LoadingSkeleton';
 import CountrySearch from './CountrySearch';
 
 
-const Home = ({countries, loaded}) => {
+const Home = ({loadhandler}) => {
 
+
+    const [countries, setCountries] = useState(null);
+    const [IsLoaded, setIsLoaded] = useState(false);
+    // const [CountryLink,setCountryLink] = useState(null)
     const [countriesFiltered, setCountriesFiltered] = useState(countries);
+
+    // functions 
+    useEffect(() => {
+        setTimeout(() => {
+
+            fetch('https://restcountries.com/v2/all')
+            .then(res => {
+                if (!res.ok) {
+                throw Error('could not fetch countires data')
+                }
+                return res.json()
+            })
+            .then(data => {
+                setCountries(data)
+                setCountriesFiltered(data)
+                setIsLoaded(true)
+            }
+            )
+        }, 5000);
+    }, []);
+
     const [continent, setContinent] = useState("all");
     const [country, setCountry] = useState('');
 
@@ -36,12 +62,15 @@ const Home = ({countries, loaded}) => {
     },[continent,country]);
     
     return ( 
+
         <div>
             <div className="main-top">
                 <CountrySearch country={country} onCountrySearch={handleCountrySearch}/>
                 <CountryFilter continent={continent} onContinentChange={handleContinentChange}/>
             </div>
-            <CountriesList countries={countriesFiltered}/>
+            {
+                IsLoaded ? <CountriesList countries={countriesFiltered}/>: <LoadingSkeleton/>
+            }
         </div>
      );
 }

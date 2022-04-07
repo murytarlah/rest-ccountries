@@ -2,18 +2,6 @@ import  { useState, useEffect } from 'react';
 
 const Navbar = ({onThemeChange, darkTheme}) => {
 
-    const [loader,setLoader] = useState(true)
-    const [cls,setCls] = useState('absolute top-[200%] left-0 w-full h-screen bg-gray-400 z-10')
-
-    useEffect(() => {
-            setTimeout(() => {
-                setLoader(false)
-            }, 1000);
-        const loaderFunc = () => 
-            loader ? cls: setCls('hidden')
-        loaderFunc()
-    },[loader,cls])
-
     return ( 
         <div className="header">
             <div>

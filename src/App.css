@@ -39,7 +39,7 @@
     @apply xl:w-[80%] w-[80%] lg:w-[90%] md:w-[90%] gap-20  mt-10  mx-auto grid grid-cols-1 xl:gap-x-20 xl:gap-y-24 lg:gap-x-6 lg:gap-y-14 sm:gap-10 md:gap-x-6 md:gap-y-12 justify-center md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4 transition-transform transform-cpu
 }
 .country{
-    @apply w-auto xl:w-[300px] max-w-[300px] h-full bg-gray-lt-text mx-auto overflow-hidden rounded-md relative shadow-lg dark:bg-darkblue-light transition-transform transform-cpu
+    @apply w-[250px] md:w-auto xl:w-[250px] max-w-[250px] h-full bg-gray-lt-text mx-auto overflow-hidden rounded-md relative shadow-lg dark:bg-darkblue-light
 }
 
 .country .country-img{
@@ -150,4 +150,39 @@
 
 .country-filter select option{
     @apply p-3 bg-white dark:bg-darkblue-light text-black dark:text-white 
+}
+
+
+
+
+/*  Preloader Stylings */
+
+.loader{
+    @apply xl:w-[80%] w-[80%] lg:w-[90%] md:w-[90%] gap-20  mt-10  mx-auto grid grid-cols-1 xl:gap-x-20 xl:gap-y-24 lg:gap-x-6 lg:gap-y-14 sm:gap-10 md:gap-x-6 md:gap-y-12 justify-center md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4 transition-transform transform-cpu
+}
+.loader .country{
+    @apply w-[250px] xl:w-[300px] max-w-[300px] h-[396px] bg-gray-lt-text mx-auto overflow-hidden rounded-md relative shadow-lg dark:bg-darkblue-light transition-transform transform-cpu border-0
+}
+
+.loader .country .country-img{
+    @apply w-full min-w-full rounded-md 
+}
+
+.loader .country-img div{
+    @apply w-full mx-auto   h-48 object-cover rounded-md dark:from-darkblue-dark dark:to-slate-600 animate-light bg-anim bg-gradient-to-tr from-neutral-300 to-gray-50
+}
+
+.loader .country .country-body{
+    @apply p-6 h-full
+}
+
+.loader .country .country-title h1{
+    @apply my-5 text-gray-900 text-2xl font-medium dark:text-white w-full p-4 dark:from-darkblue-dark dark:to-slate-600 animate-light bg-anim bg-gradient-to-tr from-neutral-300 to-gray-50
+}
+
+.loader .country .country-body .country-info p{
+    @apply text-gray-500 text-sm py-1 dark:text-white p-9 my-3 dark:from-darkblue-dark dark:to-slate-600 animate-light bg-anim bg-gradient-to-tr from-neutral-300 to-gray-50
+}
+.loader .country .country-body .country-info p span{
+    @apply font-bold 
 }
