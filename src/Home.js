@@ -27,7 +27,10 @@ const Home = ({countries}) => {
         if (continent !== "all"){
             setCountriesFiltered(filtered(continent))
         }
-        if (country.length > 1){
+        else{
+            setCountriesFiltered(countries)
+        }
+        if (country !== ''){
             setCountriesFiltered(searchFilter(country))
         }
     },[continent,country]);

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+*{
+    @apply transition-all
+}
+
 .content{
     @apply bg-gray-light dark:bg-darkblue-dark pb-20 min-h-screen
 }
