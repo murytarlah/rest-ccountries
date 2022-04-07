@@ -2,11 +2,11 @@ import Country from "./Country";
 
 const CountriesList = ({ countries }) => {
     return (
-        <div className="countries">
+        <main className="countries">
             {countries.map((country,i) => (
                 <Country key={i} country={country} />
             ))}
-        </div>
+        </main>
     );
 }
 

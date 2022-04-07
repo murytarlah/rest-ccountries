@@ -1,6 +1,6 @@
 const Navbar = ({onThemeChange, darkTheme}) => {
     return ( 
-        <div className="header">
+        <header className="header">
             <div>
                 <div className="navbrand">
                     <h1>Where in the world?</h1>
@@ -21,7 +21,7 @@ const Navbar = ({onThemeChange, darkTheme}) => {
                     <span>Dark Mode</span>
                 </button>
             </div>
-        </div>
+        </header>
      );
 }
  
