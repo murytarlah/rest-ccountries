@@ -65,7 +65,9 @@ const CountryDetails = () => {
                                 <p className="domain"><span>Top Level Domain:</span> {country.topLevelDomain[0]}</p>
                                 <p className="currency"><span>Currencies:</span> 
                                     {
-                                        country.currencies.map(currency => currency.name)
+                                        country.currencies.map(currency => {
+                                            return <p key={currency.code}>{currency.name}</p>
+                                        })
                                     }
                                 </p>
                                 <p className="languages"><span>Languages: </span>
