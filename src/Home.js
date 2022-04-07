@@ -11,14 +11,14 @@ const Home = ({countries}) => {
     const [country, setCountry] = useState('');
 
     const handleCountrySearch = (event) =>{
-        setCountry(event.target.value.toLowerCase())
+        setCountry(event.target.value)
     }
     const handleContinentChange = (event) =>{
         setContinent(event.target.value)
     }
 
     const searchFilter = (searchcountry) =>{
-        return countries.filter( country => country.name.toLowerCase().includes(searchcountry))
+        return countries.filter( country => country.name.includes(searchcountry))
     }
     const filtered = (continent) => {
         return countries.filter(country => country.region === continent)

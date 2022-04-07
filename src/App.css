@@ -8,7 +8,7 @@
 }
 
 .content{
-    @apply bg-gray-light dark:bg-darkblue-dark pb-20 min-h-screen
+    @apply bg-gray-light dark:bg-darkblue-dark pb-20 min-h-screen 
 }
 
 .header {
@@ -36,10 +36,10 @@
 }
 
 .countries{
-    @apply xl:w-[80%] w-[80%] lg:w-[90%] md:w-[90%] gap-20  mt-10  mx-auto grid grid-cols-1 xl:gap-x-20 xl:gap-y-24 lg:gap-x-6 lg:gap-y-14 sm:gap-10 md:gap-x-6 md:gap-y-12 justify-center md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4 
+    @apply xl:w-[80%] w-[80%] lg:w-[90%] md:w-[90%] gap-20  mt-10  mx-auto grid grid-cols-1 xl:gap-x-20 xl:gap-y-24 lg:gap-x-6 lg:gap-y-14 sm:gap-10 md:gap-x-6 md:gap-y-12 justify-center md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4 transition-transform transform-cpu
 }
 .country{
-    @apply w-auto xl:w-[300px] max-w-[300px] h-full bg-gray-lt-text mx-auto overflow-hidden rounded-md relative shadow-lg dark:bg-darkblue-light
+    @apply w-auto xl:w-[300px] max-w-[300px] h-full bg-gray-lt-text mx-auto overflow-hidden rounded-md relative shadow-lg dark:bg-darkblue-light transition-transform transform-cpu
 }
 
 .country .country-img{
