@@ -15,13 +15,8 @@ const Navbar = ({onThemeChange, darkTheme}) => {
     },[loader,cls])
 
     return ( 
-        <header className="header top">
-            <div className="relative">
-                <div className={cls} style={{
-                    display: 'none important!'
-                }}>
-                    <div className="loader-content"></div>
-                </div> 
+        <div className="header">
+            <div>
                 <div className="navbrand">
                     <h1>Where in the world?</h1>
                 </div>
@@ -41,7 +36,7 @@ const Navbar = ({onThemeChange, darkTheme}) => {
                     <span>Dark Mode</span>
                 </button>
             </div>
-        </header>
+        </div>
      );
 }
  
