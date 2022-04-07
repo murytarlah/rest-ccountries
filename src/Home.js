@@ -30,7 +30,7 @@ const Home = ({loadhandler}) => {
                 setIsLoaded(true)
             }
             )
-        }, 5000);
+        }, 1000);
     }, []);
 
     const [continent, setContinent] = useState("all");

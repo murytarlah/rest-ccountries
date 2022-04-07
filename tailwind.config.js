@@ -24,15 +24,9 @@ module.exports = {
         },
         lightup: {
           '0%': {
-              /*opacity: 0;*/
-              /*filter: brightness(0.8);*/
-              /*background: linear-gradient(0deg, transparent, #8484844a, transparent) no-repeat;*/
               'backgroundPosition': '0 -1000px',
           },
           '100%': {
-              /*opacity: 0;*/
-              /*filter: brightness(0.8);*/
-              /*background: linear-gradient(90deg, transparent, #8484844a, transparent) no-repeat;*/
               'backgroundPosition': '0 0'
       
           }
