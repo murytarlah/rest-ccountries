@@ -1,7 +1,27 @@
+import  { useState, useEffect } from 'react';
+
 const Navbar = ({onThemeChange, darkTheme}) => {
+
+    const [loader,setLoader] = useState(true)
+    const [cls,setCls] = useState('absolute top-[200%] left-0 w-full h-screen bg-gray-400 z-10')
+
+    useEffect(() => {
+            setTimeout(() => {
+                setLoader(false)
+            }, 1000);
+        const loaderFunc = () => 
+            loader ? cls: setCls('hidden')
+        loaderFunc()
+    },[loader,cls])
+
     return ( 
-        <header className="header">
-            <div>
+        <header className="header top">
+            <div className="relative">
+                <div className={cls} style={{
+                    display: 'none important!'
+                }}>
+                    <div className="loader-content"></div>
+                </div> 
                 <div className="navbrand">
                     <h1>Where in the world?</h1>
                 </div>

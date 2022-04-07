@@ -4,7 +4,7 @@ import { useState,useEffect } from 'react';
 import CountrySearch from './CountrySearch';
 
 
-const Home = ({countries}) => {
+const Home = ({countries, loaded}) => {
 
     const [countriesFiltered, setCountriesFiltered] = useState(countries);
     const [continent, setContinent] = useState("all");
