@@ -1,26 +1,24 @@
 import CountriesList from './CountriesList'
 import CountryFilter from './CountryFilter';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import LoadingSkeleton from './LoadingSkeleton';
 import CountrySearch from './CountrySearch';
 
 
-const Home = ({loadhandler}) => {
+const Home = ({ loadhandler }) => {
 
-
+    // states
     const [countries, setCountries] = useState(null);
     const [IsLoaded, setIsLoaded] = useState(false);
-    // const [CountryLink,setCountryLink] = useState(null)
     const [countriesFiltered, setCountriesFiltered] = useState(countries);
+    const [continent, setContinent] = useState("all");
+    const [country, setCountry] = useState('');
 
-    // functions 
     useEffect(() => {
-        setTimeout(() => {
-
-            fetch('https://restcountries.com/v2/all')
+        fetch('https://restcountries.com/v2/all')
             .then(res => {
                 if (!res.ok) {
-                throw Error('could not fetch countires data')
+                    throw Error('could not fetch countires data')
                 }
                 return res.json()
             })
@@ -30,49 +28,73 @@ const Home = ({loadhandler}) => {
                 setIsLoaded(true)
             }
             )
-        }, 1000);
     }, []);
 
-    const [continent, setContinent] = useState("all");
-    const [country, setCountry] = useState('');
 
-    const handleCountrySearch = (event) =>{
+    /**
+     * handleCountrySearch: sets the country state to the search input
+     * 
+     * @param {Event} event 
+     */
+    const handleCountrySearch = (event) => {
         setCountry(event.target.value)
     }
-    const handleContinentChange = (event) =>{
+
+    /**
+     * handleContinentChange: sets the continent state to the selected continent
+     * 
+     * @param {Event} event 
+     */
+    const handleContinentChange = (event) => {
         setContinent(event.target.value)
     }
 
-    const searchFilter = (searchcountry) =>{
-        return countries.filter( country => country.name.includes(searchcountry))
+
+
+    /**
+     * searchFilter: filters the countries based on the search input
+     * 
+     * @param {string} searchcountry 
+     * @returns array of countries that match the search
+     */
+    const searchFilter = (searchcountry) => {
+        return countries.filter(country => country.name.toLowerCase().startsWith(searchcountry.toLowerCase()))
     }
+
+    /**
+     * filtered: filters the countries based on the continent
+     * 
+     * @param {string} continent
+     * @returns array of countries that match the continent
+     */
+
     const filtered = (continent) => {
         return countries.filter(country => country.region === continent)
     }
     useEffect(() => {
-        if (continent !== "all"){
+        if (continent !== "all") {
             setCountriesFiltered(filtered(continent))
         }
-        else{
+        else {
             setCountriesFiltered(countries)
         }
-        if (country !== ''){
+        if (country !== '' && continent) {
             setCountriesFiltered(searchFilter(country))
         }
-    },[continent,country]);
-    
-    return ( 
+    }, [continent, country]);
+
+    return (
 
         <div>
             <div className="main-top">
-                <CountrySearch country={country} onCountrySearch={handleCountrySearch}/>
-                <CountryFilter continent={continent} onContinentChange={handleContinentChange}/>
+                <CountrySearch country={country} onCountrySearch={handleCountrySearch} />
+                <CountryFilter continent={continent} onContinentChange={handleContinentChange} />
             </div>
             {
-                IsLoaded ? <CountriesList countries={countriesFiltered}/>: <LoadingSkeleton/>
+                IsLoaded ? <CountriesList countries={countriesFiltered} /> : <LoadingSkeleton />
             }
         </div>
-     );
+    );
 }
- 
+
 export default Home;
